@@ -1,0 +1,21 @@
+{
+    "train":
+    {
+        "model": "GIGN", 
+        "data_root" : "./",
+        "save_dir" : "./model",
+        "graph_type" : "Graph_ConBAP",
+        "repeat" : 3,
+        "fold" : 0,
+        "epochs" : 30,
+        "batch_size" : 28,
+        "early_stop_epoch" : 100,
+        "save_model": true, 
+        "create" : true,
+        "margin": 0.25,
+        "margin_t0": -1,
+        "margin_fn": "tanh_decay",
+        "mark": null,
+        "only_affinity": true
+    }
+} 
