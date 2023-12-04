@@ -64,7 +64,7 @@ batch_size = 1
 device = torch.device('cuda:0')
 model = ConBAP(35, 256).to(device)
 
-load_model_dict(model, f'../unsupervised/model/20230817_110144_GIGN_repeat3/model/contrastive_1.pt')
+load_model_dict(model, f'../unsupervised/model/20230817_110144_Con_BAP_repeat3/model/contrastive_1.pt')
 
 model = downstream_docking(model, 256).to(device)
 model = model.to(device)

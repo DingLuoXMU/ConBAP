@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
         device = torch.device('cuda:0')
         model = ConBAP(35, 256).to(device)
-        load_model_dict(model, f'../unsupervised/model/20230817_110144_GIGN_repeat3/model/contrastive_1.pt')
+        load_model_dict(model, f'../unsupervised/model/20230817_110144_Con_BAP_repeat3/model/contrastive_1.pt')
         model = downstream_affinity(model, 256).to(device)
         optimizer = optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-6) #1e-4
         criterion = nn.MSELoss()

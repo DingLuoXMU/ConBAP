@@ -4,7 +4,7 @@
         "model": "GIGN", 
         "data_root" : "./",
         "save_dir" : "./model",
-        "graph_type" : "Graph_ConBAP",
+        "graph_type" : "ConBAP",
         "repeat" : 3,
         "fold" : 0,
         "epochs" : 30,
