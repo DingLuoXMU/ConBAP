@@ -18,17 +18,21 @@ from torch_geometric.data import Data
 from torch_geometric.data.batch import Batch
 from feature_utils import *
 import warnings
-from threading import Lock
-import gvp
-my_lock = Lock()
+import re
+
 RDLogger.DisableLog('rdApp.*')
 np.set_printoptions(threshold=np.inf)
 warnings.filterwarnings('ignore')
-atom_radius = {"N": 1.8, "O": 1.7, "S": 2.0, "P": 2.1, "F": 1.5, "Cl": 1.8,
-               "Br": 2.0, "I": 2.2, "C": 1.9, "H": 0.0, "Zn": 0.5, "B": 1.8,"metal": 1.2}#, "Na": 2.2, "K": 2.8, "Mg": 1.7, "Fe": 2.23,"V":2.3}
-dir_lig_pqr = "./data/pdbbind/pqr_lig"
-dir_pdb_pqr = "./data/pdbbind/pdb_pqr"
+
 # %%
+def extract_parts(string):
+    pattern = r"rec_(.+)_lig"
+    match = re.search(pattern, string)
+    if match:
+        content = match.group(1)
+        return content
+    else:
+        raise ValueError("The string is not in the right format")
 def one_of_k_encoding(k, possible_values):
     if k not in possible_values:
         raise ValueError(f"{k} is not a valid value in {possible_values}")

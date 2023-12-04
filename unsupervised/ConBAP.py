@@ -7,7 +7,7 @@ from torch.nn.utils.rnn import pad_sequence
 from torch_geometric.nn import global_mean_pool, max_pool_x
 from torch_geometric.nn.conv import  GATv2Conv
 from HIL import CrossAttentionBlock,GVP_embedding,InteractionBlock,MPNNL,EGNN_complex
-import gvp
+
 import math
 import numpy as np
 

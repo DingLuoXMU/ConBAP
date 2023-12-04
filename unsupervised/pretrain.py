@@ -199,7 +199,7 @@ if __name__ == '__main__':
     test2016_rst,  = val(model,  device)
 
     msg = "valid_rst-%.4f, test2016_rst-%.4f, " \
-                % (valid_rst,test2016_rst, )
+                % (valid_rst,test2016_rst )
 
     logger.info(msg)
         

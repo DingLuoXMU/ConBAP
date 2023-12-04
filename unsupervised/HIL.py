@@ -4,9 +4,8 @@ from torch import Tensor
 from torch_geometric.nn.conv import MessagePassing
 import torch.nn as nn
 import torch.nn.functional as F
-from gvp import GVP, GVPConvLayer, LayerNorm, tuple_index
+from gvp import GVP, GVPConvLayer, LayerNorm
 from egnn_clean import EGNN
-import esm
 
 # heterogeneous interaction layer
 class MPNNL(MessagePassing):

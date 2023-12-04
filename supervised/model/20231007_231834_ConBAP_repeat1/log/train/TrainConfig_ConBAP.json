@@ -1,0 +1,1 @@
+{"model": "ConBAP", "data_root": "./data/pdbbind", "save_dir": "./model", "graph_type": "ConBAP", "repeat": 1, "fold": 0, "epochs": 2000, "batch_size": 64, "early_stop_epoch": 150, "save_model": true, "create": true, "mark": null, "only_affinity": true}
