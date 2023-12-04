@@ -9,7 +9,7 @@
         "fold" : 0,
         "epochs" : 2000,
         "batch_size" :64,
-        "early_stop_epoch" : 150,
+        "early_stop_epoch" : 80,
         "save_model": true, 
         "create" : true,
         "mark": null,
