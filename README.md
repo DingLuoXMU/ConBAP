@@ -60,14 +60,14 @@ pdb,affinity
 
 **Contrastive Learning with Redocked 2020 Dataset:**
 
-- Process the redocked 2020 dataset. (The processed data sets available at [here](https://doi.org/10.5281/zenodo.10532672.).)
+- Process the redocked 2020 dataset. (The processed data sets are available at [here](https://doi.org/10.5281/zenodo.10532672).)
 - Run the pretraining script: `python pretrain.py`.
 
 
 **Fine-Tuning with PDBbind Dataset:**
 
 - A checkpoint for contrastive learning is available in `./unsupervised/model`.
-- Run the training script: `python train_ConBAP.py` (The processed data sets available at [here](https://doi.org/10.5281/zenodo.10532672.).)
+- Run the training script: `python train_ConBAP.py` (The processed data sets are available at [here](https://doi.org/10.5281/zenodo.10532672).)
 (Note: Modify file paths based on your directory structure.)
 
 ### 3. Model Testing
