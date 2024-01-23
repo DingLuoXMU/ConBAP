@@ -64,7 +64,7 @@ batch_size = 1
 device = torch.device('cuda:0')
 model = ConBAP(35, 256).to(device)
 
-load_model_dict(model, f'../unsupervised/model/20230817_110144_Con_BAP_repeat3/model/contrastive_1.pt')
+load_model_dict(model, f'../unsupervised/model/20230817_110144_ConBAP_repeat3/model/contrastive_1.pt')
 
 model = downstream_docking(model, 256).to(device)
 model = model.to(device)
@@ -93,7 +93,7 @@ for pdbid in pdbids:
         f.write("#code\tscore\n")
         poses = valid_df['pdb'].values.tolist()
         for pose, score in zip(poses, pred):
-            f.write(f"{pose}\t{score[0]}\n") # 用制表符分隔两列数据
+            f.write(f"{pose}\t{score[0]}\n") 
             
 print("done")
 

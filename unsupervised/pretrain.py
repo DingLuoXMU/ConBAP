@@ -192,16 +192,7 @@ if __name__ == '__main__':
             best_model_list.append(model_path)
             save_model_dict(model, logger.get_model_dir(), msg)
 
-    # final testing
-    load_model_dict(model, best_model_list[-1])
-    valid_rst = val(model, valid_loader, device)
 
-    test2016_rst,  = val(model,  device)
-
-    msg = "valid_rst-%.4f, test2016_rst-%.4f, " \
-                % (valid_rst,test2016_rst )
-
-    logger.info(msg)
         
 
 # %%
