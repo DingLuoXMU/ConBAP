@@ -7,16 +7,16 @@ To set up your environment to run the code, install the following packages:
 matplotlib==3.7.2  
 networkx==3.1  
 numpy==1.24.3  
-pandas==2.0.3 
+pandas==2.0.3  
 rdkit==2022.09.5  
 scikit_learn==1.3.0  
 scipy==1.5.2  
 seaborn==0.12.2  
 pytorch==1.12.1  
 torch_geometric==2.0.3  
-tqdm==4.63.0 
+tqdm==4.63.0  
 pymol-open-source==2.5.0  
-biopython==1.78 
+biopython==1.78  
 
 ## Usage
 
