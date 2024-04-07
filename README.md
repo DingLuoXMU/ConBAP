@@ -7,18 +7,16 @@ To set up your environment to run the code, install the following packages:
 matplotlib==3.7.2  
 networkx==3.1  
 numpy==1.24.3  
-pandas==2.0.3  
-pymol==0.1.0  
+pandas==2.0.3 
 rdkit==2022.09.5  
 scikit_learn==1.3.0  
 scipy==1.5.2  
 seaborn==0.12.2  
 pytorch==1.12.1  
 torch_geometric==2.0.3  
-tqdm==4.63.0  
-openbabel==3.1.1  
+tqdm==4.63.0 
 pymol-open-source==2.5.0  
-
+biopython==1.78 
 
 ## Usage
 
@@ -79,6 +77,7 @@ pdb,affinity
 
 (Note: Modify file paths based on your directory structure.)
 ## Reference
+- Ding Luo, Dandan Liu, Xiaoyang Qu, Lina Dong, and Binju Wang, J. Chem. Inf. Model. 2024, 64, 6, 1892–1906.
+[Enhancing Generalizability in Protein–Ligand Binding Affinity Prediction with Multimodal Contrastive Learning](https://doi.org/10.1021/acs.jcim.3c01961)
 
-- The paper has been submitted for publication.
 
