@@ -1,5 +1,8 @@
 # Enhancing Generalizability in Protein-Ligand Binding Affinity Prediction with Multimodal Contrastive Learning
-<img src='./toc.jpg' width='600'>
+<div align=center>
+<img src='./fig1.jpg' width='600',height="300px">
+</div> 
+
 ## Requirements
 
 To set up your environment to run the code, install the following packages:
@@ -73,11 +76,13 @@ pdb,affinity
 - Testing checkpoints are located in `./supervised/model`.
 - Run the prediction script: `python predict_single.py`.
 - If you want to test the docking power or screening power in CASF-2016:
-- Run the test script: `python casf_docking_single.py` `casf_screening_single.py` `predict.py`.
+- Run the test script: `python casf_docking_single.py` `casf_screening_single.py`.
+- If you want to use this model on your own dataset:
+- Run the test script: `predict.py`.
 
 (Note: Modify file paths based on your directory structure.)
 ## Reference
-- Ding Luo, Dandan Liu, Xiaoyang Qu, Lina Dong, and Binju Wang, J. Chem. Inf. Model. 2024, 64, 6, 1892–1906.
+- Ding Luo, Dandan Liu, Xiaoyang Qu, Lina Dong, and Binju Wang*, J. Chem. Inf. Model. 2024, 64, 6, 1892–1906.
 [Enhancing Generalizability in Protein–Ligand Binding Affinity Prediction with Multimodal Contrastive Learning](https://doi.org/10.1021/acs.jcim.3c01961)
 
 
