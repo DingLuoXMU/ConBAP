@@ -135,35 +135,14 @@ def mols2graphs(complex_path, pdbid, label, save_path_l,save_path_p,save_path_aa
     x = torch.cat([x_l, x_p], dim=0)
     edge_index_inter, edge_attrs_inter = inter_graph(ligand, pocket, dis_threshold=5)
     pos = torch.concat([pos_l, pos_p], dim=0)
-    # split = torch.cat([torch.zeros((atom_num_l, )), torch.ones((atom_num_p,))], dim=0)
     parser = PDBParser(QUIET=True)
-    if len(pdbid.split("_")) < 2 : # 
-        # for pdbbind
-        # pocket_pdb = f"./data/pdbbind/v2020-other-PL/{pdbid}/Pocket_{pocket_dis}A.pdb"
-        # protein_pdb = f"./data/pdbbind/protein_remove_extra_chains_10A/{pdbid}_protein.pdb"
-        # for casr
-        pocket_pdb = f"./data/toy_set/graph_data/{pdbid}/Pocket_{pocket_dis}A.pdb"
-        protein_pdb = f"./data/toy_set/protein/{pdbid}_protein.pdb"
-        # for fep-benchmark
-        # pocket_pdb = f"./data/fep-benchmark/graph_data/tnks2/{pdbid}/pocket_{pocket_dis}A.pdb"
-        # protein_pdb = "./data/fep-benchmark/tnks2/4ui5-prepared.pdb"
-    # for casf_docking
-    # print(pdbid)
-    else:
-        pdb = pdbid.split("_")[0]
-        pocket_pdb = f"./data/CASF-2016/graph_data/{pdb}/{pdbid}/pocket_{pocket_dis}A.pdb"
-        # 提取data_screening中的pdb
-        # pdb = complex_path.split("/")[-3]   #
-        # pocket_pdb = f"./data/CASF-2016/data_screening/{pdb}/{pdbid}/pocket_{pocket_dis}A.pdb"
-        protein_pdb = f"./data/CASF-2016/coreset/{pdb}/{pdb}_protein.pdb"
+    pocket_pdb = os.path.join(os.path.dirname(complex_path), f'Pocket_{pocket_dis}A.pdb')
+    protein_pdb = os.path.join(os.path.dirname(complex_path).split('graph_data')[0], "protein", f'{pdbid}_protein.pdb')
 
     s = parser.get_structure(pdbid, pocket_pdb)
     protein = parser.get_structure(pdbid, protein_pdb)    
     res_list = get_clean_res_list(s.get_residues(), verbose=False, ensure_ca_exist=True)
     pro_res_list = get_clean_res_list(protein.get_residues(), verbose=False, ensure_ca_exist=True)
-    # print("res_list",len(res_list))
-    # interaction_label,len_coords_alpha_c = get_interaction_label(ligand,res_list, dis_threshold=5.)
-    # 不使用pro_res_list，处理数据时则不会使用esm模型
     x_aa, seq, node_s, node_v, edge_index, edge_s, edge_v = get_protein_feature(res_list,pro_res_list, plm=False)
     
 
@@ -330,38 +309,6 @@ if __name__ == '__main__':
     # # three hours
     toy_set = GraphDataset(data_dir, data_df, graph_type='ConBAP', dis_threshold=8, create=True)
     print('finish!')
-
-    # for casf_docking
-
-    # pdbids = os.listdir("./data/CASF-2016/graph_data")
-    
- 
-    # for pdb in pdbids:
-    #     data_root = f'./data/CASF-2016/graph_data/{pdb}'
-    #     data_df = pd.read_csv(os.path.join(data_root, f'{pdb}.csv'))
-    #     valid_set = GraphDataset(data_root, data_df, graph_type='ConBAP', dis_threshold=8, create=True)
-    # print('finish!')
-
-    # for casf_screening
-    # pdbids = os.listdir("./data/CASF-2016/data_screening")
-    # pdbids = ["3dd0"]
-    # # pdbids =["1a30"]
-    # for pdb in pdbids:
-    #     data_root = f'./data/CASF-2016/data_screening/{pdb}'
-    #     data_df = pd.read_csv(os.path.join(data_root, f'{pdb}.csv'))
-    #     valid_set = GraphDataset(data_root, data_df, graph_type='Graph_GIGN', dis_threshold=8, create=True)
-
-    # for CSAR_NRC_HiQ_Set:
-    # data_root = './data/CSAR_NRC_HiQ_Set/graph_data'
-    # data_root_df = './data/CSAR_NRC_HiQ_Set/'
-    # data_df = pd.read_csv(os.path.join(data_root_df, 'casr.csv'))
-    # valid_set = GraphDataset(data_root, data_df, graph_type='Graph_GIGN', dis_threshold=8, create=True)
-
-    #for fep-benchmark:
-    # data_root = './data/fep-benchmark/graph_data/tnks2'
-    # data_root_df = './data/fep-benchmark/tnks2'
-    # data_df = pd.read_csv(os.path.join(data_root_df, 'data.csv'))
-    # valid_set = GraphDataset(data_root, data_df, graph_type='ConBAP', dis_threshold=8, create=True)
 
     
 

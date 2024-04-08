@@ -22,8 +22,8 @@ def generate_pocket(data_dir,data_df, distance=8):
 
         # lig_native_path = f"./data/pdbbind/renumber_atom_index_same_as_smiles/{cid}.sdf"
         # protein_path = f"./data/pdbbind/protein_remove_extra_chains_10A/{cid}_protein.pdb"
-        lig_native_path = f"./data/toy_set/ligand/{cid}.sdf"
-        protein_path = f"./data/toy_set/protein/{cid}_protein.pdb"
+        lig_native_path = os.path.join(data_dir, 'ligand', f'{cid}.sdf')
+        protein_path = os.path.join(data_dir, 'protein', f'{cid}_protein.pdb')
 
         if os.path.exists(os.path.join(complex_dir, f'Pocket_{distance}A.pdb')):
             continue
@@ -51,7 +51,7 @@ def generate_complex_v1(data_dir, data_df, distance=8, input_ligand_format='sdf'
         if input_ligand_format != 'pdb':
             # ligand_input_path = os.path.join(data_dir, 'renumber_atom_index_same_as_smiles', f'{cid}.{input_ligand_format}')
             # ligand_input_path =f'./data/pdbbind/renumber_atom_index_same_as_smiles/{cid}.{input_ligand_format}'
-            ligand_input_path = f"./data/toy_set/ligand/{cid}.sdf"
+            ligand_input_path = os.path.join(data_dir, 'ligand', f'{cid}.{input_ligand_format}')
 
         else:
             ligand_input_path = os.path.join(data_dir, cid, f'{cid}_ligand.pdb')
@@ -76,11 +76,11 @@ def generate_complex_v1(data_dir, data_df, distance=8, input_ligand_format='sdf'
 if __name__ == '__main__':
     distance = 8
     input_ligand_format = 'sdf'
-    data_root = './data'
+    data_root = './data/toy_set/'
     # data_dir = os.path.join(data_root, 'pdbbind/v2020-other-PL')
     # data_df = pd.read_csv(os.path.join(data_root, 'pdbbind/data.csv'))
-    data_dir = os.path.join(data_root,'toy_set/graph_data')
-    data_df = pd.read_csv(os.path.join(data_root, 'toy_set/toy_set.csv'))
+    data_dir = os.path.join(data_root)
+    data_df = pd.read_csv(os.path.join(data_root, 'toy_set.csv'))
 
     # generate pocket within 8 Ångström around ligand 
     generate_pocket(data_dir=data_dir,data_df=data_df, distance=distance)

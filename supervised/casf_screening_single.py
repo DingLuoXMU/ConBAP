@@ -28,19 +28,6 @@ def val(model, dataloader, device):
             pred_list.append(pred.detach().cpu().numpy())
             label_list.append(label.detach().cpu().numpy())
             
-    # pred = np.concatenate(pred_list, axis=0)
-    # pred = np.squeeze(pred) # (N, 1) -> (N, )
-    # label = np.concatenate(label_list, axis=0)
-    # # print(pred.shape)
-    # # print(label.shape)
-
-
-    # coff = np.corrcoef(pred, label)[0, 1]
-    # rmse = np.sqrt(mean_squared_error(label, pred))
-
-    # model.train()
-
-    # return rmse, coff
     pred = np.concatenate(pred_list, axis=0)
     label = np.concatenate(label_list, axis=0)
 
@@ -55,11 +42,7 @@ def val(model, dataloader, device):
 data_root = './data/CASF-2016/data_screening'
 graph_type = 'ConBAP'
 batch_size = 1
-# data_dir = os.path.join('../redock_dataset')
-# valid_df = pd.read_csv(os.path.join(data_root, 'data_index_8A_test_vina-score.csv'))
-# valid_data_pair = pd.read_csv(os.path.join(data_root, 'data_index_8A_test_vina-score.csv'))
-# valid_set = GraphDataset(data_dir, valid_df, valid_data_pair, graph_type='Graph_GIGN', dis_threshold=8, create=False, read_saved_datapair=True)
-# valid_loader = PLIDataLoader(valid_set, batch_size=batch_size, shuffle=False, num_workers=8)
+
 
 device = torch.device('cuda:0')
 model = ConBAP(35, 256).to(device)
