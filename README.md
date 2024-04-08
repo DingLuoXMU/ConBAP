@@ -1,5 +1,5 @@
 # Enhancing Generalizability in Protein-Ligand Binding Affinity Prediction with Multimodal Contrastive Learning
-
+<img src='./toc.jpg' width='600'>
 ## Requirements
 
 To set up your environment to run the code, install the following packages:
@@ -73,7 +73,7 @@ pdb,affinity
 - Testing checkpoints are located in `./supervised/model`.
 - Run the prediction script: `python predict_single.py`.
 - If you want to test the docking power or screening power in CASF-2016:
-- Run the test script: `python casf_docking_single.py` `casf_screening_single.py`.
+- Run the test script: `python casf_docking_single.py` `casf_screening_single.py` `predict.py`.
 
 (Note: Modify file paths based on your directory structure.)
 ## Reference

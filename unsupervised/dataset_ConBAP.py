@@ -456,20 +456,6 @@ if __name__ == '__main__':
 
     # pdbids = os.listdir("./data/CASF-2016/graph_data")
     # # pdbids =["1a30"]
- 
-    # for pdb in pdbids:
-    #     data_root = f'./data/CASF-2016/graph_data/{pdb}'
-    #     data_df = pd.read_csv(os.path.join(data_root, f'{pdb}.csv'))
-    #     valid_set = GraphDataset(data_root, data_df, graph_type='Graph_GIGN', dis_threshold=8, create=True)
-    # print('finish!')
-    # for casf_screening
-    # pdbids = os.listdir("./data/CASF-2016/data_screening")
-    # pdbids = ["3dd0"]
-    # # pdbids =["1a30"]
-    # for pdb in pdbids:
-    #     data_root = f'./data/CASF-2016/data_screening/{pdb}'
-    #     data_df = pd.read_csv(os.path.join(data_root, f'{pdb}.csv'))
-    #     valid_set = GraphDataset(data_root, data_df, graph_type='Graph_GIGN', dis_threshold=8, create=True)
 
     
 
