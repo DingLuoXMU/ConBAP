@@ -62,7 +62,6 @@ test2016_loader = PLIDataLoader(test2016_set, batch_size=batch_size, shuffle=Fal
 
 device = torch.device('cuda:0')
 
-# for epoch, weight in enumerate(os.listdir(f'./model/{checkpoint}/model')):
 model = ConBAP(35, 256).to(device)
 model = downstream_affinity(model, 256).to(device)
 # load_model_dict(model, "./model/20230925_205502_ConBAP_repeat0/model/epoch-601, train_loss-0.0776, train_rmse-0.2787, valid_rmse-1.1926, valid_pr-0.7534.pt")
