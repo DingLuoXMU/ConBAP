@@ -1,7 +1,7 @@
 {
     "train":
     {
-        "model": "GIGN", 
+        "model": "ConBAP", 
         "data_root" : "./",
         "save_dir" : "./model",
         "graph_type" : "ConBAP",

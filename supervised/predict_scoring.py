@@ -61,7 +61,6 @@ test2016_loader = PLIDataLoader(test2016_set, batch_size=batch_size, shuffle=Fal
 
 
 device = torch.device('cuda:0')
-# checkpoint = "20230921_185454_GIGN_repeat0"
 
 # for epoch, weight in enumerate(os.listdir(f'./model/{checkpoint}/model')):
 model = ConBAP(35, 256).to(device)
