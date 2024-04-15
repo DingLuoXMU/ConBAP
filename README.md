@@ -20,7 +20,7 @@ torch_geometric==2.0.3
 tqdm==4.63.0  
 pymol-open-source==2.5.0  
 biopython==1.78  
-
+GVP-GNN
 ## Usage
 
 ### 1. Prepare a Dataset
