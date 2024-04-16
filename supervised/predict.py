@@ -39,11 +39,11 @@ def val(model, dataloader, device):
 
 def predict(data_root, graph_type, batch_size):
 
-    data_graph = os.path.join(data_root, "graph_data")
+    data_graph = os.path.join(data_root)
     valid_df = os.listdir(data_root)
     valid_df = [os.path.join(data_root, i) for i in valid_df if 'csv' in i][0]
     valid_df = pd.read_csv(valid_df)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print("used device:", device)
     
     model = ConBAP(35, 256).to(device)

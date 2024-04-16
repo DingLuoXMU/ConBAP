@@ -137,8 +137,8 @@ def mols2graphs(complex_path, pdbid, label, save_path_l,save_path_p,save_path_aa
     pos = torch.concat([pos_l, pos_p], dim=0)
     parser = PDBParser(QUIET=True)
     pocket_pdb = os.path.join(os.path.dirname(complex_path), f'Pocket_{pocket_dis}A.pdb')
-    protein_pdb = os.path.join(os.path.dirname(complex_path).split('graph_data')[0], "protein", f'{pdbid}_protein.pdb')
-
+    # protein_pdb = os.path.join(os.path.dirname(complex_path).split('graph_data')[0], "protein", f'{pdbid}_protein.pdb')
+    protein_pdb = os.path.join(os.path.dirname(complex_path).split(f'{pdbid}')[0], "protein", f'{pdbid}_protein.pdb')
     s = parser.get_structure(pdbid, pocket_pdb)
     protein = parser.get_structure(pdbid, protein_pdb)    
     res_list = get_clean_res_list(s.get_residues(), verbose=False, ensure_ca_exist=True)
@@ -303,7 +303,7 @@ class GraphDataset(Dataset):
 if __name__ == '__main__':
     data_root = './data'
     
-    data_dir = os.path.join(data_root, 'toy_set/graph_data')
+    data_dir = os.path.join(data_root, 'toy_set')
     data_df = pd.read_csv(os.path.join(data_root, 'toy_set/toy_set.csv'))
     
     # # three hours
