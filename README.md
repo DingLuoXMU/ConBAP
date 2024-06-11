@@ -16,11 +16,11 @@ scikit_learn==1.3.0
 scipy==1.5.2  
 seaborn==0.12.2  
 pytorch==1.12.1  
-torch_geometric==2.0.3  
+torch_geometric==2.3.0  
 tqdm==4.63.0  
 pymol-open-source==2.5.0  
 biopython==1.78  
-GVP-GNN
+GVP-GNN=0.1
 ## Usage
 
 ### 1. Prepare a Dataset

@@ -47,7 +47,7 @@ batch_size = 1
 # valid_df = pd.read_csv(os.path.join('./data/pdbbind/val_new.csv'))
 # test2016_df = pd.read_csv(os.path.join('./data/pdbbind/data_test.csv'))
 
-data_dir = os.path.join('./data/toy_set/graph_data')
+data_dir = os.path.join('./data/toy_set/')
 test_df = pd.read_csv(os.path.join('./data/toy_set/toy_set.csv'))
 
 
