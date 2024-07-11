@@ -6,21 +6,30 @@
 ## Requirements
 
 To set up your environment to run the code, install the following packages:
+Install python 3.8.16 using conda
+with conda install:
+pytorch==2.2 (see in [pytorch official website instructions](https://pytorch.org/get-started/locally/)).
+pymol-open-source==2.5.0
 
-matplotlib==3.7.2  
-networkx==3.1  
-numpy==1.24.3  
-pandas==2.0.3  
-rdkit==2022.09.5  
-scikit_learn==1.3.0  
-scipy==1.5.2  
-seaborn==0.12.2  
-pytorch==1.12.1  
-torch_geometric==2.3.0  
-tqdm==4.63.0  
-pymol-open-source==2.5.0  
-biopython==1.78  
-GVP-GNN=0.1
+Install GVP-GNN:
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv torch_geometric -f https://data.pyg.org/whl/torch-2.2.0+cu121.html
+follow instructions [here](https://github.com/drorlab/gvp-pytorch).
+git clone https://github.com/drorlab/gvp-pytorch.git
+cd gvp-pytorch
+pip install -e .
+
+Finally the rest of dependencies (copy it in a requirements.txt and run pip install -r requirements.txt):
+matplotlib==3.7.2
+networkx==3.1
+numpy==1.24.3
+pandas==2.0.3
+rdkit==2022.09.5
+scikit_learn==1.3.0
+scipy==1.5.2
+seaborn==0.12.2
+tqdm==4.63.0
+biopython==1.78
+
 ## Usage
 
 ### 1. Prepare a Dataset
